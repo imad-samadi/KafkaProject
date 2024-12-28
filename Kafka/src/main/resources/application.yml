@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        updateCommunication-in-0:
+          destination: communication-sent
+          group: KafkaProducer
+        sendCommunication-out-0:
+          destination: send-communication
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
+logging:
+  level:
+    com.example.Kafka: DEBUG
+    org.springframework: INFO
+
+
